@@ -42,7 +42,7 @@ export default function App() {
       const lockedTokens = {};
       Object.keys(locked).forEach((key) => { if (locked[key]) lockedTokens[key] = tokens[key]; });
 
-      const res = await fetch("http://127.0.0.1:8000/api/palettes/generate", {
+      const res = await fetch("/api/palettes/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ vibe: overridePrompt, locked_tokens: lockedTokens })
